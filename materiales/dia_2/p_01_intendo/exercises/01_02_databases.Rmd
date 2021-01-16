@@ -1,0 +1,56 @@
+---
+title: "01_02_databases"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse)
+library(DBI)
+library(RMariaDB)
+library(usethis)
+```
+
+## Working with Data in a Database, Part II
+
+For this workshop we have a MySQL database available on AWS. I'll provide the necessary information about how to access it here. 
+
+A safe way to store secrets on a system is to use environment variables. Let's use `usethis::edit_r_envion()` to add environment variables that contain configuration and authentication values for the `intendo` database.
+
+``` r
+# Edit the `.Renviron` file
+edit_r_envion()
+```
+
+This is what the lines to be added should look like:
+
+```
+DBNAME=intendo
+USERNAME=
+PASSWORD=
+HOST=intendo-db.csa7qlmguqrf.us-east-1.rds.amazonaws.com
+PORT=3306
+```
+
+Let's make a connection to the database (i.e., create a `con` object):
+
+```{r mysql_connection_to_db}
+con <-
+  DBI::dbConnect(
+    drv = RMariaDB::MariaDB(),
+    dbname = Sys.getenv("DBNAME"),
+    username = Sys.getenv("USERNAME"),
+    password = Sys.getenv("PASSWORD"),
+    host = Sys.getenv("HOST"),
+    port = Sys.getenv("PORT")
+  )
+```
+
+To determine which tables are in the database, we can use the `DBI::dbListTables()` function. 
+
+```{r list_tables}
+DBI::dbListTables(con)
+```
+
+Those are the tables that the **intendo** organization uses on a daily basis. They contain all of the data on users' sessions (`daily_users`), any revenue generated (`revenue`), and summarized information on user history (`users`) for their one game called **Super Jetroid**.

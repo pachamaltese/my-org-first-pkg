@@ -1,75 +1,56 @@
-My Organization's First R Package
-================
+Mi Primer Paquete de R
+======================
 
-### rstudio::conf 2020
+### Originalmente presentado en inglés en la rstudio::conf 2020
 
-by Rich Iannone and Malcolm Barrett
+por Rich Iannone and Malcolm Barrett
+traducido por Mauricio "Pachá" Vargas Sepúlveda
+(la traducción omite detalles específicos como los horarios de coffee break de la rstudio::conf 2020)
 
------
+## Visión General
 
-:spiral_calendar: January 27 and 28, 2020  
-:alarm_clock:     09:00 - 17:00  
-:hotel:           Golden Gate Room 8  
-:writing_hand:    [rstd.io/conf](http://rstd.io/conf)
+Al usar R en una organización, existe un claros beneficios de usar un paquete organizacional de R. Estos beneficios se observan con uno o más usuarios de R. Un paquete de R enfocado en las necesidades particulares de una organización puede abrir un mundo de posibilidades incluyendo facilitar el acceso a datos, funciones compartidas para transformar y analizar datos y una estética compartida para los informes.
 
------
+Crear tu primer paquete organizacional de R puede llegar a ser intimidante. Te podrás preguntar "¿Qué funciones debo incluir?", "¿Cómo lo harán mis colegas para instalarlo (y actualizarlo)?", "¿Qué se puede hacer para asegurar un control de calidad suficiente?". Este taller mostrará cómo obtener un paquete organizacional de R desde cero. Daremos un vistazo a la planificación del paquete y la comprensión de los requerimiento de los actores internos. Vamos a tener en consideración cómo este paquete encaja con la infraestructura organizacional existente. Veremos el diseño y la implementación de funciones para acceder a los datos y realizar análisis e informes a partir de estos. Una de las partes más difíciles del proceso es quizá obtener y mantener el apoyo interno para un proyecto de paquete organizacional. Para manejar esto, veremos algunas formas para comunicar el valor y desarrollar una comunidad interna de colegas para sostener el proyecto y convertirlo en una parte valiosa de la infraestructura central.
 
-## Overview
+## Objetivos de Aprendizaje
 
-If your organization uses R, there are clear benefits to having an organizational R package. Such benefits can be realized whether there is only a single R user or dozens of them. An R package focused on the particular needs of an organization can open up a world of possibilities including easier data access, shared functions for data transformation and analysis, and a common look and feel for reporting.
+Los asistentes aprenderán a crear un paquete de R desde cero usando las funciones del (excelente) paquete **usethis**. Verás una introducción a la creación de paquetes, con énfasis en flujos de trabajo convenientes. Veremos como integrar funciones que usan conexiones a bases de datos para generar KPIs en un proyecto de paquete. También habrá un especial énfasis en lo que se puede hacer para que el proyecto de paquete sea exitoso dentro de la organización.
 
-Creating your first organizational R package can be daunting however. You may wonder: “what functions should be included?”, “how would colleagues install the package (and updates)?”, “what could be done to ensure there is sufficient quality control?”. This workshop will demonstrate how to get an organizational R package off the ground. We’ll take a look at planning the package and understanding the requirements of the internal stakeholders. We’ll consider how the package could fit in with existing organizational infrastructure. We’ll design and implement functions for data access, data analysis, and reporting. One of the hardest parts of the process could very well be gaining and maintaining internal support for an organizational package project. To address this, we’ll work through ways to communicate value and to develop an internal community of colleagues to sustain the project and to make it a valuable part of the core infrastructure.
+## ¿Es este taller para mi?
 
-## Learning objectives
+Este taller es apropiado para quienes respondan afirmativamente las siguientes preguntas:
 
-Attendees will learn how to create an R package from the ground up with functions available in the excellent **usethis** package. You'll get an introduction to package creation, with an emphasis on convenient workflows. We'll learn how to integrate functions that use database data to generate KPIs into a package project. There will also be a special focus on things that can be done to help make the package project succeed within the organization.
+1. ¿Trabajas en una organización que usa R como parte de sus herramientas analíticas?
+2. ¿Obtendrías un beneficio si parte de tus tareas diarias (en tu organización) se pudieran hacer mediante una suite especializada de funciones de R? 
+3. ¿Valoras la consistencia, calidad y estandarización en el trabajo con R que realizas para tu organización?
 
-## Is this course for me?
+### Día 1
 
-This workshop is appropriate for attendees who answer "yes" to these three questions: 
+| Contenidos                          |
+| :---------------------------------- |
+| Configuración de paquetes           |
+| Escribir y documentar código        |
+| Probar código y enseñar a otros     |
+| Agregar datos, archivos y unir todo |
 
-1. Do you work in an organization that uses R as part of its analytical toolchain? 
-2. Could day-to-day data analysis tasks performed in R (at your organization) benefit from a suite of specialized R functions? 
-3. Do you value consistency, quality, and standardization in the R work done in your organization?
+### Día 2
 
-## Prework
+| Contenidos                          |
+| :---------------------------------- |
+| Trabajo con bases de datos          |
+| Empaquetar funciones                |
+| Administración de paquetes          |
+| Estandarizar informas y unir todo   |
 
-All of the important details for the things you can do before the workshop are at: https://my-org-first-pkg-2020.netlify.com/pre/.
+### Instructores
 
-## Schedule for Day 1 (January 27, 2020)
-
-| Time          | Activity                       |
-| :------------ | :----------------------------- |
-| 09:00 - 10:30 | Welcome, Setup Packages        |
-| 10:30 - 11:00 | *Coffee break*                 |
-| 11:00 - 12:30 | Write Code, Document           |
-| 12:30 - 13:30 | *Lunch break*                  |
-| 13:30 - 15:00 | Test Code, Teach Others        |
-| 15:00 - 15:30 | *Coffee break*                 |
-| 15:30 - 17:00 | Adding Data and Files, Wrap Up |
-
-### Instructor
-
-Malcolm Barrett is an R developer and a PhD student in Epidemiology at the University of Southern California. His work in public health has spanned on-ground clinical education and research for clinical and cohort studies. Previously, he was an intern at RStudio, and he served two years in AmeriCorps at federally-qualified health centers in Michigan and New York City.
-
-## Schedule for Day 2 (January 28, 2020)
-
-| Time          | Activity                        |
-| :------------ | :------------------------------ |
-| 09:00 - 10:30 | Working with Data in a Database |
-| 10:30 - 11:00 | *Coffee break*                  |
-| 11:00 - 12:30 | Package Functions               |
-| 12:30 - 13:30 | *Lunch break*                   |
-| 13:30 - 15:00 | Package Management              |
-| 15:00 - 15:30 | *Coffee break*                  |
-| 15:30 - 17:00 | Standardized Reporting, Wrap Up |
+[Malcolm Barrett](https://twitter.com/malco_barrett) es Doctor en Epidemiología por la Universidad del Sur de California. Su trabajo en salud pública cubre la educación en terreno y la investigación en estudios clínicos y de cohortes. Anteriormente, realizó una práctica en RStudio y sirvió dos años en AmeriCorps en centros de saludos acreditados a nivel federal en Michigan y la ciudad de Nueva York.
 
 ### Rich Iannone
 
-Rich is a software engineer that enjoys working with R. He likes to create R packages that help people to accomplish things. During workshops like this one, Rich wants to teach R material in a way that is both enjoyable and educational. While Rich very clearly digs R, he enjoys other things as well! Examples include: playing and listening to music, reading books, watching films, meeting up with friends, and wandering through the many valleys and ravines of the Greater Toronto Area.
+Rich es un ingeniero de software que disfruta trabajar con R. Le gusta crear paquetes de R que ayuden a las personas a cumplir metas. En distintos talleres como este, Rich quiere que enseñar R sea una experiencia grata y educativa. Mientras que Rich maneja R muy bien, ¡También le gusta hacer otras cosas! Algunos ejemplos son: tocar y escuchar música, ver películas, juntarse con amigos y pasear por los valles y barrancos del Área del Gran Toronto.
 
 -----
 
-![](https://i.creativecommons.org/l/by/4.0/88x31.png) This work is
-licensed under a [Creative Commons Attribution 4.0 International
-License](https://creativecommons.org/licenses/by/4.0/).
+![](https://i.creativecommons.org/l/by/4.0/88x31.png) Este trabajo se he liberado bajo licencia [Creative Commons Atribución 4.0 Internacional](https://creativecommons.org/licenses/by/4.0/).

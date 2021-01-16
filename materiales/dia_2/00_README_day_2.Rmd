@@ -1,0 +1,71 @@
+---
+title: "Day 2"
+output: html_document
+---
+
+## *Day 2* of My Organization's First R Package 
+
+Making an R package for your organization can either be a short process or a long process. Most of the time it'll be a long, yet enjoyable, process. One hopes that data users in the organization will see the value of the package and thus more potential uses (and additions).
+
+We can only cover so much in a day of workshoppin'. Day 1 teaches us all about how to generate a package that has all the necessary components in place. If we keep following all of the tasks of adding functions, documenting, testing, etc., then we'll have a healthy and usable package. Now, we just need ideas for useful functions that suit the modern organization.
+
+The course materials will be available on the website and you could always reach out to us to discuss the course contents.
+
+Today, we'll learn about:
+
+ 1. `Working with Data in a Database`, leading to easier access to database tables c/o our R package
+ 2. Adding some `Package Functions` for reporting KPIs and getting data segments
+ 3. `Package Management`: the management and communication around an internal R package
+ 4. Using `Standardized Reporting` functions to standardize tables and plots for an organization's reporting needs
+ 
+## Periods Where You Do Package Development
+
+There are time allotments for working on a package that's only meant to be used with a specific organization's data. We have a publicly-hosted database at our disposal with data tables that we'll use for all the examples and for the exercises. The tables are a bit domain-specific and we do have to spend a little bit of time understanding the lingo and the business logic that goes with it. After that, things should be easier to understand.
+
+We are providing checkpoint package projects so that you don't run the risk of get progressively more stuck. There will also be a number of TAs available to guide you through and provide some ideas. Don't ever worry about the 'correctness' or 'completeness' of any of your work. The main purpose of the workshop exercises is more-or-less to expose you to some design ideas (which may be flawed!) that you could adapt in your own organization's R package. You could work alone or work in a small group... do whatever suits your style of work and feel to experiment with ideas of your own.
+
+## About that Simulated Data
+
+All of the code to generate it is available in the `generate_game_studio_data.R` script. Yes, it does try to simulate analytics data you might find at a game studio. It's by no means a very reasonable simulation of user behavior in the game space but it should serve us well at least for the purposes of this workshop.
+
+The dataset generation script takes a very long time to run. If you'd prefer to skip all of that processing time, RDS files for the three tables are available in the repo as `daily_users.rds`, `revenue.rds`, and `users.rds`.
+
+## Packages Required
+
+The R packages needed for Day 2 are:
+
+- DBI
+- RSQLite
+- RMariaDB
+- nycflights13
+- dplyr
+- readr
+- lubridate
+- ggplot2
+- scales
+- magrittr
+- rlang
+- usethis
+- testthat
+- glue
+- askpass
+- rmarkdown
+- gt (with remotes::install_github("rstudio/gt"))
+
+The installation of **RMariaDB** requires the installation of system libraries. The names of the libraries and their method of installation depend on the system:
+
+### Debian or Ubuntu
+
+`sudo apt-get install -y libmysqlclient-dev`
+`sudo apt-get install -y libmariadb-client-lgpl-dev`
+
+### Fedora, CentOS, or RHEL
+
+`sudo yum install mysql-devel`
+`sudo yum install mysql-devel`
+
+### Mac (Homebrew)
+
+`brew install mysql-connector-c++`
+`brew install mariadb-connector-c`
+

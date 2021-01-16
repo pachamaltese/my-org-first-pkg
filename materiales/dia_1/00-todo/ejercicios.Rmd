@@ -1,0 +1,42 @@
+---
+title: "Juego Completo 2: Haciendo un paquete personal de R"
+output:
+  html_document:
+    df_print: paged
+---
+
+```{r setup}
+library(devtools)
+library(usethis)
+```
+
+
+Crea un paquete personal de R para tu propio uso. Este tipo de paquete es adecuado para funciones y plantillas que usar repetitivamente.
+
+1. Crea el paquete: `create_package()`
+
+Un tópico habitual para este tipo de paquetes es usar las iniciales de la persona y algo acerca de lo que hace, e.g. `Hmisc` y `cowplot`. (¡Estos dos paquetes personales terminaron siendo mucho más populares que sólo un usuario original!)
+
+2. Agrega algunas funciones: `use_r()`. 
+
+Piensa en el código que escribes repetidamente. Si no se te ocurre alguno, un buen punto de partida es un tema de ggplot2.
+
+3. Ejecuta `check()`
+
+Soluciona todos los errores/advertencias que aparezcan, por ejemplo usa `use_mit_license()` para arreglar una advertencia de "no se encuentra la licencia".
+
+4. Agrega roxygen2 y documenta tus funciones con `use_roxygen_md()` y `document()`
+
+¡Documenta tus funciones!
+
+5. Agrega pruebas con `use_test()`
+
+Recuerda, enfócate en los aspectos externos del código.
+
+6. Agrega un LEEME: `use_readme_rmd()`
+
+Describe el paquete y para quién es (¡para ti!)
+
+7. Agrega git y sube tu paquete a GitHub, o un servicio similar, usando `use_git()` y `use_github()`.
+
+8. ¡Sigue agregando funcionas en la medida que se te ocurran! ¡Escribe, documenta, compila ,testea y revisa seguido!

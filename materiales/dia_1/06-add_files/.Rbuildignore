@@ -1,0 +1,9 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+^avalanchr\.Rcheck$
+^avalanchr.*\.tar\.gz$
+^avalanchr.*\.tgz$
+^exercises$
+^exercises\.Rmd$
+^slides\.pdf$
+^README\.Rmd$
